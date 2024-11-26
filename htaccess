@@ -1,0 +1,42 @@
+ErrorDocument 403 /page58890373.html
+ErrorDocument 404 /page58890373.html
+
+DirectoryIndex page58634503.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://voxelium\.art/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.voxelium.art [NC]
+RewriteRule ^(.*)$ https://voxelium\.art/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^index$ page58634503.html [NC]
+RewriteRule ^index/$ page58634503.html [NC]
+
+RewriteRule ^privacy-policy-en$ page58972465.html [NC]
+RewriteRule ^privacy-policy-en/$ page58972465.html [NC]
+
+RewriteRule ^privacy-policy-ru$ page58965739.html [NC]
+RewriteRule ^privacy-policy-ru/$ page58965739.html [NC]
+
+RewriteRule ^songs$ page58579055.html [NC]
+RewriteRule ^songs/$ page58579055.html [NC]
+
+RewriteRule ^games$ page37635699.html [NC]
+RewriteRule ^games/$ page37635699.html [NC]
+
+RewriteRule ^blank$ page58890373.html [NC]
+RewriteRule ^blank/$ page58890373.html [NC]
+
+RewriteRule ^cookie-policy-en$ page58937551.html [NC]
+RewriteRule ^cookie-policy-en/$ page58937551.html [NC]
+
+RewriteRule ^cookie-policy-ru$ page58974385.html [NC]
+RewriteRule ^cookie-policy-ru/$ page58974385.html [NC]
+
+
